@@ -2,10 +2,16 @@ name: ci
 
 on: push
 
-jobs: 
-  
-  ci:
+env: 
+  PORT: ${{ secrets.PORT }}
+  SERVER_SECRET: ${{ secrets.SERVER_SECRET }}
+  MONGODB_URI: ${{ secrets.MONGODB_URI }}
+  PLATFORM_URI: ${{ secrets.PLATFORM_URI }}
+  SERVER_URI: ${{ secrets.SERVER_URI }}
+  SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
 
+jobs: 
+  ci:
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout repo
